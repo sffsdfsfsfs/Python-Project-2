@@ -132,7 +132,8 @@ After you fix the bugs, simply **commit your changes** (save your work to the pr
 - Play the game and explore all its features.
 - Find anything that doesn’t work as described.
 - Fix the code in `space_adventure.py` so the game matches the instructions.
-- Commit your changes and let the auto-tests do their thing!
+- Commit your changes and raise PRs (pull requests) and let the auto-tests do their thing!
+- You will recieve marks for each bug you are fixing.
 
 If all tests pass, congratulations! You’ve made Space Adventure work perfectly. 🌟
 
