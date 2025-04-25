@@ -33,6 +33,8 @@ def load_image(name):
 # Game settings
 FPS = 60
 
+
+
 # Create the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Space Adventure - Debug Challenge")
