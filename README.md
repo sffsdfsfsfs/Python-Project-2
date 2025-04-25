@@ -1,63 +1,27 @@
-# 🚀 Space Adventure Game – Student Mission Guide
+# 🚀 Galaxy Invaders
 
-Welcome, Space Cadet! 🌟
+A classic arcade-style space shooter game built using Python and the Pygame library.
 
-You are about to embark on a journey to explore, play, and improve a classic space shooter game built with Python and Pygame. This guide will help you get started, understand the game, and show you how to make it even better. Ready to launch? Let’s go!
-
----
-
-## 1. What is Pygame?
-
-**Pygame** is a set of Python tools that make it easy to create games with graphics, sound, and user input. If you’ve never used Pygame before, don’t worry! You’ll learn as you play and fix the game.
+This project offers a chance to explore and contribute to a 2D game developed with Pygame.
 
 ---
 
-## 2. Getting Started: Setup Checklist
+## 📜 Project Description
 
-### 🛠️ Step 1: Install the Requirements
+Galaxy Invaders is a 2D space shooter where the player controls a spaceship to defend against waves of oncoming alien enemies. The game involves shooting, dodging, collecting power-ups, and managing health/lives. As an active development project, there might be bugs or areas where functionality deviates from the intended design.
 
-1. Open your terminal (Command Prompt, PowerShell, or Terminal app).
-2. Move to the game folder (You can see your current path in your terminal):
-   ```bash
-   cd /path/to/Space_shooting
-   ```
-3. Install all the required Python packages (including Pygame):
-   ```bash
-   pip install -r requirements.txt
-   ```
-   This will make sure everything you need is ready!
-
+![alt text](support/Opening.png)
 ---
 
-## 3. Running the Game
-
-1. **Create the game sprites:** This will create all the sprites (images) you need for the game
-   ```bash
-   python create_sprites.py
-   ```
-   > **Want to know what each image or icon means?**
-   > After creating the sprites, check out the [IMAGE_GUIDE.md](IMAGE_GUIDE.md) document for a fun visual guide to all the game graphics!
-2. **Start the game:**
-   ```bash
-   python space_adventure.py
-   ```
-3. You should see a screen like this:
-
-   ![Opening Screen](support/Opening.png)
-
----
-
-## 4. How to Play
+## How to Play
 
 - **Move Left:** Left Arrow Key
 - **Move Right:** Right Arrow Key
 - **Shoot:** Spacebar
 
-Try playing the game and see how it works! If it doesn't work as you expect, then that could be a bug!!
-
 ---
 
-## 5. Game Features & What to Expect
+## Game Features & What to Expect
 
 ### 🚀 Player Ship
 - Your ship appears at the bottom of the screen.
@@ -100,45 +64,59 @@ If you don’t see the power-up effects or icons as shown, there may be somethin
 
 ---
 
-## 6. Developer’s Corner: What Could Go Wrong?
 
-When developers create games, sometimes things are left in a test state or small mistakes are made. For example:
-- The game might not end when all lives are lost.
-- The shield or health might not decrease as expected.
-- Power-ups might not work or display correctly.
-- Enemies or bullets might not behave as described.
-- Sometimes, values like + and - are mixed up, or things go out of bounds.
+## 🛠️ Tech Stack
 
-Yes, there are more things could go wrong. Your job is to play the game, notice anything that doesn’t match the descriptions above, and improve the code so everything works as intended.
+- Python 3
+- Pygame library
 
 ---
 
-## 7. How to Test Your Fixes (🚦 Auto-Magic Edition!)
+## 🚀 Getting Started
 
-After you fix the bugs, simply **commit your changes** (save your work to the project). The test cases will run automatically in the background—like magic! ✨
+### Prerequisites
 
-- If all tests pass, you’ve fixed the bugs correctly and your mission is a success! 🏅
-- If any tests fail, something still needs to be fixed—review your changes and try again. Don’t worry, every great coder learns from mistakes!
+- Python 3 installed.
+- pip (Python package installer) installed.
 
-**Tips for Success:**
-- Don’t just change values to make tests pass. Make sure your fixes follow best practices, like correct indentation and spacing.
-- Sometimes, the game might work, but the test will only pass if you fix the code properly!
-- Since you are developing this as a team, code should be readable and you shouldn’t change the code structure or anything that isn’t necessary. That may cause test cases to fail.
+### Installation and Running
+
+1.  Clone the repository and navigate to the project's root directory in your terminal.
+2.  Install necessary Python packages (including Pygame):
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Important:** Generate the game's image assets (sprites):
+    ```bash
+    python create_sprites.py
+    ```
+    *(Check [IMAGE_GUIDE.md](IMAGE_GUIDE.md) for a visual explanation of the sprites after running this command.)*
+4.  Start the game:
+    ```bash
+    python space_adventure.py
+    ```
+--- 
+
+## 🚩 How to Contribute
+
+Help us improve Galaxy Invaders!
+1.  Play the game thoroughly to identify behavior that doesn't match the feature descriptions or seems incorrect (e.g., issues with scoring, lives, shields, power-ups, enemy patterns, game state). Check GitHub Issues for known bugs.
+2.  Debug and correct the Python code, primarily within `space_adventure.py`, to align the game with the intended mechanics.
+3.  Commit your fixes and submit them via Pull Requests (PRs) to the main repository.
+4.  **Focus on logical fixes.** Ensure your code is readable and adheres to good practices. Avoid unnecessary structural changes that might disrupt existing functionality or tests.
+
+*(Note: Potential areas needing attention include calculation errors, condition logic, power-up effects, or game state transitions. Exploring the code and gameplay is the best way to find these.)*
 
 ---
 
-## 8. Your Mission 🚩
+## 🧪 Testing & Validation
 
-- Play the game and explore all its features.
-- Find anything that doesn’t work as described.
-- Fix the code in `space_adventure.py` so the game matches the instructions.
-- Commit your changes and raise PRs (pull requests) and let the auto-tests do their thing!
-- You will recieve marks for each bug you are fixing.
-
-If all tests pass, congratulations! You’ve made Space Adventure work perfectly. 🌟
+- Automated tests are configured to run against submitted Pull Requests.
+- These tests simulate gameplay scenarios to verify that game mechanics work as expected after your fixes are applied.
+- Passing the automated test suite is a requirement for merging contributions.
 
 ---
 
-Good luck, and have fun improving Space Adventure! 🚀
+## 🙏 Thank You!
 
-> "The best way to learn to code is to play, break, and fix. May your bugs be few and your fixes be legendary!" 🛸
+Thank you for playing and considering contributing to Galaxy Invaders!
