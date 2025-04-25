@@ -82,9 +82,9 @@ class Player(pygame.sprite.Sprite):
         self.speed_x = 0
         keystate = pygame.key.get_pressed()
         if keystate[pygame.K_LEFT]:
-            self.speed_x = 8
-        if keystate[pygame.K_RIGHT]:
             self.speed_x = -8
+        if keystate[pygame.K_RIGHT]:
+            self.speed_x = 8
 
         self.rect.x += self.speed_x
         if self.rect.right > SCREEN_WIDTH + 20:
@@ -99,14 +99,15 @@ class Player(pygame.sprite.Sprite):
                 all_sprites.add(bullet)
                 bullets.add(bullet)
             elif self.power_level >= 2:
-                bullet1 = Bullet(self.rect.centerx, self.rect.top)
-                all_sprites.add(bullet1)
-                bullets.add(bullet1)
+                bullet1 = Bullet(self.rect.centerx-10, self.rect.top)
+                bullet2 = Bullet(self.rect.centerx+10, self.rect.top)
+                all_sprites.add(bullet1,bullet2)
+                bullets.add(bullet1,bullet2)
 
     def hide(self):
         self.hidden = True
         self.hide_timer = pygame.time.get_ticks()
-        self.rect.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT + 200)
+        self.rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT + 200)
 
     def powerup(self):
         self.power_level += 1
@@ -145,7 +146,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = x
         self.rect.bottom = y
-        self.speedy = 1
+        self.speedy = -10
 
     def update(self):
         self.rect.y += self.speedy
@@ -267,7 +268,7 @@ def main_game():
         all_sprites.update()
         
         # Check bullet-enemy collisions
-        hits = pygame.sprite.groupcollide(enemies, bullets, False, True)
+        hits = pygame.sprite.groupcollide(enemies, bullets, True, True)
         for hit in hits:
             score += 10
             # Create explosion
@@ -293,7 +294,7 @@ def main_game():
             all_sprites.add(new_enemy)
             enemies.add(new_enemy)
             if player.shield <= 0:
-                # player.lives -= 1
+                 player.lives -= 1
                 player.shield = 100
                 player.hide()
                 if player.lives == 0:
@@ -310,7 +311,8 @@ def main_game():
                 player.powerup()
         
         if game_over:
-            pass
+            running=False
+            continue
             
         # Draw / render
         screen.fill(BLACK)
