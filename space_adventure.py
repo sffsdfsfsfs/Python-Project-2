@@ -82,9 +82,9 @@ class Player(pygame.sprite.Sprite):
         self.speed_x = 0
         keystate = pygame.key.get_pressed()
         if keystate[pygame.K_LEFT]:
-            self.speed_x = 8
-        if keystate[pygame.K_RIGHT]:
             self.speed_x = -8
+        if keystate[pygame.K_RIGHT]:
+            self.speed_x = 8
 
         self.rect.x += self.speed_x
         if self.rect.right > SCREEN_WIDTH + 20:
@@ -145,7 +145,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = x
         self.rect.bottom = y
-        self.speedy = 1
+        self.speedy = -10
 
     def update(self):
         self.rect.y += self.speedy
@@ -293,7 +293,7 @@ def main_game():
             all_sprites.add(new_enemy)
             enemies.add(new_enemy)
             if player.shield <= 0:
-                # player.lives -= 1
+                player.lives -= 1
                 player.shield = 100
                 player.hide()
                 if player.lives == 0:
@@ -310,7 +310,8 @@ def main_game():
                 player.powerup()
         
         if game_over:
-            pass
+            running=False
+            continue
             
         # Draw / render
         screen.fill(BLACK)
