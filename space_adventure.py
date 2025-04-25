@@ -82,9 +82,9 @@ class Player(pygame.sprite.Sprite):
         self.speed_x = 0
         keystate = pygame.key.get_pressed()
         if keystate[pygame.K_LEFT]:
-            self.speed_x = -8
-        if keystate[pygame.K_RIGHT]:
             self.speed_x = 8
+        if keystate[pygame.K_RIGHT]:
+            self.speed_x = -8
 
         self.rect.x += self.speed_x
         if self.rect.right > SCREEN_WIDTH + 20:
@@ -99,9 +99,10 @@ class Player(pygame.sprite.Sprite):
                 all_sprites.add(bullet)
                 bullets.add(bullet)
             elif self.power_level >= 2:
-                bullet1 = Bullet(self.rect.centerx, self.rect.top)
-                all_sprites.add(bullet1)
-                bullets.add(bullet1)
+                bullet1 = Bullet(self.rect.centerx-10, self.rect.top)
+                bullet2 = Bullet(self.rect.centerx+10, self.rect.top)
+                all_sprites.add(bullet1,bullet2)
+                bullets.add(bullet1,bullet2)
 
     def hide(self):
         self.hidden = True
@@ -267,7 +268,7 @@ def main_game():
         all_sprites.update()
         
         # Check bullet-enemy collisions
-        hits = pygame.sprite.groupcollide(enemies, bullets, False, True)
+        hits = pygame.sprite.groupcollide(enemies, bullets,True, True)
         for hit in hits:
             score += 10
             # Create explosion
