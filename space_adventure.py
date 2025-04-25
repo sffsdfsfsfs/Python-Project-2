@@ -294,7 +294,7 @@ def main_game():
             all_sprites.add(new_enemy)
             enemies.add(new_enemy)
             if player.shield <= 0:
-                 player.lives -= 1
+                player.lives -= 1
                 player.shield = 100
                 player.hide()
                 if player.lives == 0:
